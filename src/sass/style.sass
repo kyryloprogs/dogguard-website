@@ -1,4 +1,11 @@
 
+=footer_text_style
+    font-family: 'Nunito Sans'
+    font-style: normal
+    font-weight: 600
+    font-size: 18px
+    line-height: 150%
+
 .container
     max-width: 1600px
     margin: 0 auto
@@ -249,6 +256,7 @@ h3
 .capabilities
     min-height: 666px
     padding: 72px 0 72px 0
+
     .title
         position: relative
         text-align: center
@@ -393,7 +401,38 @@ h3
             color: #292729
             // margin-top: auto
 
-.footer
+footer
     max-height: 70px
-    &_legal_text
+    padding: 24px 0 30px 0
+    .footer_wrapper
+        display: flex
+        justify-content: space-around
+        flex-direction: row
+        .legal_text
+            +footer_text_style
+            color: #292729
+        .author
+            position: relative
+            text-align: center
+            vertical-align: top
+
+            +footer_text_style
         
+            color: #292729
+        .social
+            display: inline-block
+            font-size: 30px
+            i:hover
+                animation: icons 1s none infinite normal 0.3s 
+        .add_info
+            +footer_text_style
+
+@keyframes  icons
+    0%
+        transform: rotate(0deg)
+    10%
+        transform: rotate(-20deg)
+    20%
+        transform: rotate(20deg)
+    100%
+        transform: rotate(360deg)
