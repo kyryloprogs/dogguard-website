@@ -23,7 +23,7 @@
             <div class="container">
 
                 <div class="row">
-                    <div class="col-xl-4">
+                    <div class="col-xl-4 col-md-4">
                         <div class="main_block">
                             <div class="logo">
                                 <img src="icons/logo_black.png" alt="logo">
@@ -37,7 +37,7 @@
                         </div>
                     </div>
 
-                    <div class="col-xl-8">
+                    <div class="col-xl-8 col-md-8">
                         <div class="menu">
                             <ul class="menu_list">
                                 <li class="menu_list_item"><a href="#" class="item_link">Пакети</a></li>
@@ -149,7 +149,7 @@
                         <li>Захист служби охорони</li>
                     </ul>
                     <div class="promises_block_price">1000 грн / місяць</div>
-                    <button class="promises_block_btn" id="choose_1">Обрати</button>
+                    <button class="promises_block_btn" id="choose_0">Обрати</button>
                 </div>
 
 
@@ -163,7 +163,7 @@
                         <li>Клумбу з рослинами-асасінами</li>
                     </ul>
                     <div class="promises_block_price">10000 грн / місяць</div>
-                    <button class="promises_block_btn" id="choose_2">Обрати</button>
+                    <button class="promises_block_btn" id="choose_1">Обрати</button>
                 </div>
 
                 <div class="promises_block">
@@ -177,7 +177,7 @@
                         <li>Вбудований захист від корупції</li>
                     </ul>
                     <div class="promises_block_price">Ціна за домовленістю</div>
-                    <button class="promises_block_btn" id="choose_3">Обрати</button>
+                    <button class="promises_block_btn" id="choose_2">Обрати</button>
                 </div>
             </div>
         </div>
@@ -209,11 +209,47 @@
                 </div>
             </div>
         </div>
-
     </footer>
-
+    
+    <div class="modal hidden">
+        <div class="modal_dialog hidden">
+            <div class="modal_content">
+                <form action="">
+                    <div data-close class="modal_content_close"></div>
+                    <div class="modal_title">
+                        Відчуйте реальну 
+                        <br>
+                        безпеку
+                    </div>
+                    <div class="modal_pocket">
+                        <div class="modal_pocket_title">Обраний пакет: </div> 
+                        <div class="modal_pocket_chosen"><b>Безпечна квартира</b></div>
+                        <div class="modal_pocket_btn">Змінити</div>
+                    </div>
+                    <div class="modal_name">
+                        <div class="modal_name_title">Ваше ім’я</div>
+                        <input required placeholder="Сергій Іванович" name="name" id="name" type="text" class="modal_input input_name">
+                    </div>
+                    <div class="modal_number">
+                         <div class="modal_number_title">Ваш номер телефону</div>
+                    <input required mask="+000 00 000 00 00" placeholder="+380 33 333 33 33" id="phone" name="phone" type="phone" class="modal_input input_number">
+                    </div>
+                   
+                    <div class="modal_rules">
+                        <input required type="checkbox" class="modal_rules_checkbox"> 
+                        <div class="modal_rules_title">Погоджуюсь з умовами сервісу</div>
+                    </div>
+                    
+                    <button class="modal_btn" id="main_modal_btn">Зареєструватись</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
     <script src="https://kit.fontawesome.com/62c58101b8.js" crossorigin="anonymous"></script>
-
+    <script src="js/script.js" crossorigin="anonymous"></script>
+});
 </body>
 
 </html>
