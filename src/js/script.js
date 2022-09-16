@@ -1,7 +1,6 @@
-$(document).ready(function () {
+$(function() {
     $('#phone').mask('+000 00 000 00 00');
-});
-
+  });
 
 // Modal main
 
@@ -14,6 +13,7 @@ const btns = document.querySelectorAll(".promises_block_btn"),
     userPhone = document.querySelector('#phone'),
     form = document.querySelector('form'),
     pocketBtn = document.querySelector('.modal_pocket_btn'),
+    footerData = document.querySelector('footer'),
     planList = [
         'Безпечна квартира',
         'Безпечний будинок',
@@ -24,13 +24,10 @@ const btns = document.querySelectorAll(".promises_block_btn"),
 
 pocketBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    // closeModal();
-    modalWindow.classList.add('hidden');
-    modalWindow.classList.remove('show');
-    // modalWrapper.classList.remove('hidden');
 
-    // modalWrapper.childNodes.add
-
+    hideModal(modalWindow);
+    // modalWindow.classList.add('hidden');
+    // modalWindow.classList.remove('show');
     const thanksModal = document.createElement('div');
     thanksModal.classList.add('modal_dialog');
     thanksModal.innerHTML = `
@@ -60,9 +57,10 @@ pocketBtn.addEventListener('click', (e) => {
             </div>
         </div>
  `;
-    // thanksModal.querySelectorAll('button')
+
     modalWrapper.append(thanksModal);
     const tempButton = modalWrapper.querySelectorAll('.modal_pocket_block_choose');
+    
     tempButton.forEach((e) => {
         e.addEventListener('click', (el) => {
             localStorage.setItem('id', planList[+el.target.id.replace('choose_', '')]);
@@ -72,80 +70,89 @@ pocketBtn.addEventListener('click', (e) => {
         // thanksModal.remove();
     });
 
+    modalWrapper.addEventListener('click', (e) => {
+        if (e.target == modalWrapper || e.target.getAttribute('data-close') == '') {
+            thanksModal.remove();
+        }
+    });
+
     // thanksModal.remove();
 });
 
-firstModalPageBtn.addEventListener('click', (e) => {
-    // e.preventDefault();
+// firstModalPageBtn.addEventListener('click', (e) => {
+//     // e.preventDefault();
 
-    if (form.submit) {
-        // debugger;
-        localStorage.setItem("phone", userPhone.value);
-        localStorage.setItem("name", userName.value);
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    // debugger;
+    localStorage.setItem("phone", userPhone.value);
+    localStorage.setItem("name", userName.value);
 
-        e.preventDefault();
-        modalWindow.classList.add('hidden');
-        modalWindow.classList.remove('show');
-        // modalWrapper.classList.remove('hidden');
 
-        // modalWrapper.childNodes.add
+    // modalWindow.classList.add('hidden');
+    // modalWindow.classList.remove('show');
+    hideModal(modalWindow);
+    // modalWrapper.classList.remove('hidden');
 
-        const checkModal = document.createElement('div');
-        checkModal.classList.add('modal_dialog');
-        checkModal.innerHTML = `
-        <div class="modal_content show">
-            <div data-close class="modal_content_close"></div>
-            <div class="modal_title">
-                Перевірка
-                <br>
-                заповнених полів:
-            </div>
-            <div class="modal_results_wrapper">
-                <div class="modal_results_block">
-                    <div class="modal_results_block_title">Обраний пакет</div>
-                    <div class="modal_results_block_chosen">${localStorage.getItem('id')}</div>
-                </div>
-        
-                <div class="modal_results_block">
-                    <div class="modal_results_block_title">Ваше ім’я</div>
-                    <div class="modal_results_block_chosen">${localStorage.getItem('name')}</div>
-                </div>
-        
-                <div class="modal_results_block">
-                    <div class="modal_results_block_title">Ваш номер телефону</div>
-                    <div class="modal_results_block_chosen">${localStorage.getItem('phone')}</div>
-                </div>
+    // modalWrapper.childNodes.add
+
+    const checkModal = document.createElement('div');
+    checkModal.classList.add('modal_dialog');
+    checkModal.innerHTML = `
+    <div class="modal_content show">
+        <div data-close class="modal_content_close"></div>
+        <div class="modal_title">
+            Перевірка
+            <br>
+            заповнених полів:
+        </div>
+        <div class="modal_results_wrapper">
+            <div class="modal_results_block">
+                <div class="modal_results_block_title">Обраний пакет</div>
+                <div class="modal_results_block_chosen">${localStorage.getItem('id')}</div>
             </div>
     
-            <div class="agreement">Ви погодились з нашими умовами сервісу.</div>
-            <button class="modal_btn modal_gray" id="back_modal_btn">Повернутись до форми реєстрації</button>
-            <button class="modal_btn" id="confirm_modal_btn">Все вірно</button>
-       </div>
-    `;
-        // thanksModal.querySelectorAll('button')
-        modalWrapper.append(checkModal);
-        const tempButtonAgree = checkModal.querySelector('#confirm_modal_btn'),
-            tempButtonBack = checkModal.querySelector('#back_modal_btn');
+            <div class="modal_results_block">
+                <div class="modal_results_block_title">Ваше ім’я</div>
+                <div class="modal_results_block_chosen">${localStorage.getItem('name')}</div>
+            </div>
+    
+            <div class="modal_results_block">
+                <div class="modal_results_block_title">Ваш номер телефону</div>
+                <div class="modal_results_block_chosen">${localStorage.getItem('phone')}</div>
+            </div>
+        </div>
 
-        tempButtonAgree.addEventListener('click', (el) => {
+        <div class="agreement">Ви погодились з нашими умовами сервісу.</div>
+        <button class="modal_btn modal_gray" id="back_modal_btn">Повернутись до форми реєстрації</button>
+        <button class="modal_btn" id="confirm_modal_btn">Все вірно</button>
+    </div>
+`;
+    // thanksModal.querySelectorAll('button')
+    modalWrapper.append(checkModal);
+    const tempButtonAgree = checkModal.querySelector('#confirm_modal_btn'),
+        tempButtonBack = checkModal.querySelector('#back_modal_btn');
+
+    tempButtonAgree.addEventListener('click', (el) => {
+        checkModal.remove();
+        // showModal();
+        showFinalModal();
+    });
+
+    tempButtonBack.addEventListener('click', () => {
+        checkModal.remove();
+        // modalWrapper.classList.add('show');
+        // modalWindow.classList.add('show');
+        showModal();
+    });
+
+    modalWrapper.addEventListener('click', (e) => {
+        if (e.target == modalWrapper || e.target.getAttribute('data-close') == '') {
             checkModal.remove();
-            showModal();
-
-            alert('Registered!');
-            checkModal.remove();
-            modalWrapper.classList.add('hidden');
-            modalWrapper.classList.remove('show');
-        });
-
-        tempButtonBack.addEventListener('click', () => {
-
-            checkModal.remove();
-            modalWrapper.classList.add('show');
-            modalWindow.classList.add('show');
-        });
-    }
-
+        }
+    });
 });
+
 
 btns.forEach((el) => {
     el.addEventListener('click', (e) => {
@@ -156,7 +163,8 @@ btns.forEach((el) => {
 
 modalWrapper.addEventListener('click', (e) => {
     if (e.target == modalWrapper || e.target.getAttribute('data-close') == '') {
-        closeModal(); // '.modal_dialog'
+        hideModal(modalWrapper);
+        hideModal(modalWindow);
     }
 });
 
@@ -167,46 +175,57 @@ function showModal() { // modalSelector
     modalWindow.classList.remove("hidden");
 
     document.querySelector('.modal_pocket_chosen').textContent = localStorage.getItem("id");
+
     if (localStorage.getItem("phone")) {
         userPhone.textContent = localStorage.getItem("phone");
     }
-    if (localStorage.getItem("phone")) {
+    if (localStorage.getItem("name")) {
         userName.textContent = localStorage.getItem("name");
     }
 
 }
 
-function closeModal() { // modalSelector
+function hideModal(modalSelector) { // 
     // const modal = document.querySelector(selector);
-    modalWrapper.classList.add('hidden');
-    modalWindow.classList.add("hidden");
-    modalWrapper.classList.remove("show");
-    modalWindow.classList.remove("show");
+    modalSelector.classList.add('hidden');
+    // modalWindow.classList.add("hidden");
+    modalSelector.classList.remove("show");
+    // modalWindow.classList.remove("show");
 }
-//   function showThanksModal(message) {
-//     const prevModalDialog = document.querySelector('.modal__dialog');
 
-//     prevModalDialog.classList.add('hide');
-//     (0,_modal__WEBPACK_IMPORTED_MODULE_0__.openModal)('.modal', modalTimerID);
 
-//     const thanksModal = document.createElement('div');
-//     thanksModal.classList.add('modal__dialog');
-//     thanksModal.innerHTML = `
-//      <div class="modal__content">
-//          <div class "modal__close" data-close>&times;</div>
-//          <div class="modal__title">${message}</div>
-//      </div>
-//  `;
+function showFinalModal() {
+    
+    const thanksModal = document.createElement('div');
+    thanksModal.classList.add('modal_dialog');
+    thanksModal.innerHTML = `
+        <div class="modal_content show">
+            <div data-close class="modal_content_close"></div>
+            <div class="modal_logo"></div>
+            <div class="modal_title">Чудово!</div>
 
-//     document.querySelector('.modal').append(thanksModal);
-//     setTimeout(() => {
-//         thanksModal.remove();
-//         prevModalDialog.classList.add('show');
-//         prevModalDialog.classList.remove('hide');
-//         (0, closeModal)('.modal');
-//     }, 4000);
-// }
+            <div class="thanks_text">Ми надішлемо вам листа з подальшими <br>
+            інструкціями стосовно реєстрації!</div>
+            <button class="modal_btn" id="accept_update">Закрити вікно</button>
+        </div>
+`;
+    // thanksModal.querySelectorAll('button')
+    modalWrapper.append(thanksModal);
 
+     const tempButtonAgree = modalWrapper.querySelector('#accept_update');
+ 
+     tempButtonAgree.addEventListener('click', (el) => {
+         thanksModal.remove();
+         hideModal(modalWrapper);
+     });
+ 
+     modalWrapper.addEventListener('click', (e) => {
+         if (e.target == modalWrapper || e.target.getAttribute('data-close') == '') {
+            thanksModal.remove();
+            hideModal(modalWrapper);
+         }
+     });
+}
 
 // Smooth scroll
 
