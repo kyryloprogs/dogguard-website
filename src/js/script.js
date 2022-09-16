@@ -21,7 +21,7 @@ const btns = document.querySelectorAll(".promises_block_btn"),
     ];
 
 
- 
+
 pocketBtn.addEventListener('click', (e) => {
     e.preventDefault();
     // closeModal();
@@ -62,7 +62,7 @@ pocketBtn.addEventListener('click', (e) => {
  `;
     // thanksModal.querySelectorAll('button')
     modalWrapper.append(thanksModal);
-    const tempButton = modalWrapper.querySelectorAll('button');
+    const tempButton = modalWrapper.querySelectorAll('.modal_pocket_block_choose');
     tempButton.forEach((e) => {
         e.addEventListener('click', (el) => {
             localStorage.setItem('id', planList[+el.target.id.replace('choose_', '')]);
@@ -79,16 +79,17 @@ firstModalPageBtn.addEventListener('click', (e) => {
     // e.preventDefault();
 
     if (form.submit) {
-        localStorage.setItem("phone", userPhone.textContent);
-        localStorage.setItem("name", userName.textContent);
-        
+        // debugger;
+        localStorage.setItem("phone", userPhone.value);
+        localStorage.setItem("name", userName.value);
+
         e.preventDefault();
         modalWindow.classList.add('hidden');
         modalWindow.classList.remove('show');
         // modalWrapper.classList.remove('hidden');
-    
+
         // modalWrapper.childNodes.add
-    
+
         const checkModal = document.createElement('div');
         checkModal.classList.add('modal_dialog');
         checkModal.innerHTML = `
@@ -102,17 +103,17 @@ firstModalPageBtn.addEventListener('click', (e) => {
             <div class="modal_results_wrapper">
                 <div class="modal_results_block">
                     <div class="modal_results_block_title">Обраний пакет</div>
-                    <div class="modal_results_block_chosen">Безпечний будинок</div>
+                    <div class="modal_results_block_chosen">${localStorage.getItem('id')}</div>
                 </div>
         
                 <div class="modal_results_block">
                     <div class="modal_results_block_title">Ваше ім’я</div>
-                    <div class="modal_results_block_chosen">Сергій Іванович</div>
+                    <div class="modal_results_block_chosen">${localStorage.getItem('name')}</div>
                 </div>
         
                 <div class="modal_results_block">
                     <div class="modal_results_block_title">Ваш номер телефону</div>
-                    <div class="modal_results_block_chosen">+380 88 888 88 88</div>
+                    <div class="modal_results_block_chosen">${localStorage.getItem('phone')}</div>
                 </div>
             </div>
     
@@ -121,17 +122,27 @@ firstModalPageBtn.addEventListener('click', (e) => {
             <button class="modal_btn" id="confirm_modal_btn">Все вірно</button>
        </div>
     `;
-     // thanksModal.querySelectorAll('button')
-     modalWrapper.append(checkModal);
-     const tempButton = modalWrapper.querySelectorAll('button');
-     tempButton.forEach((e) => {
-         e.addEventListener('click', (el) => {
-             localStorage.setItem('id', planList[+el.target.id.replace('choose_', '')]);
-             checkModal.remove();
-             showModal();
-         });
-         // thanksModal.remove();
-     });
+        // thanksModal.querySelectorAll('button')
+        modalWrapper.append(checkModal);
+        const tempButtonAgree = checkModal.querySelector('#confirm_modal_btn'),
+            tempButtonBack = checkModal.querySelector('#back_modal_btn');
+
+        tempButtonAgree.addEventListener('click', (el) => {
+            checkModal.remove();
+            showModal();
+
+            alert('Registered!');
+            checkModal.remove();
+            modalWrapper.classList.add('hidden');
+            modalWrapper.classList.remove('show');
+        });
+
+        tempButtonBack.addEventListener('click', () => {
+
+            checkModal.remove();
+            modalWrapper.classList.add('show');
+            modalWindow.classList.add('show');
+        });
     }
 
 });
@@ -200,7 +211,7 @@ function closeModal() { // modalSelector
 // Smooth scroll
 
 const btnInfo = document.querySelector(".btn_info"),
-        promisesSection = document.querySelector('.promises');
+    promisesSection = document.querySelector('.promises');
 
 
 function scrollTo(element) {
