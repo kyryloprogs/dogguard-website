@@ -19,50 +19,70 @@
 
 <body>
     <section class="promo">
+        <!-- <div class="container"> -->
         <nav>
             <div class="container">
-
                 <div class="row">
-                    <div class="col-xl-4 col-md-4">
+
+                    <div class="col-xl-3 col-lg-3 col-md-2 col-sm-3 col-5">
                         <div class="main_block">
                             <div class="logo">
                                 <img src="icons/logo_black.png" alt="logo">
                                 <div class="logo_name">DOGGUARD</div>
                             </div>
-
-                            <ul class="language">
-                                <li class="language_ua"><a href="#" class="language_link language_active">UA</a></li>
-                                <li class="language_en"><a href="#" class="language_link">EN</a></li>
-                            </ul>
                         </div>
                     </div>
 
-                    <div class="col-xl-8 col-md-8">
+                    
+                    <div class="col-xl-1 col-lg-1 col-md-2 col-sm-2 col-2">
+                        <ul class="language">
+                            <li class="language_ua"><a href="#" class="language_link language_active">UA</a></li>
+                            <li class="language_en"><a href="#" class="language_link">EN</a></li>
+                        </ul>
+                    </div>
+
+                    
+                    <div class="col-xl-8 col-lg-8 col-md-7 col-sm-6 col-4">
                         <div class="menu">
-                            <ul class="menu_list">
-                                <li class="menu_list_item"><a href="#" class="item_link">Пакети</a></li>
-                                <li class="menu_list_item"><a href="#" class="item_link">Партнери</a></li>
-                                <li class="menu_list_item"><a href="#" class="item_link white">Новини</a></li>
-                            </ul>
+                            <!-- <ul class="menu_list"> -->
+                            <!-- <li class="menu_list_item"></li>
+                            <li class="menu_list_item">
+                            <li class="menu_list_item"></li> -->
+                            <!-- </li> -->
+                            <!-- item_link
+                            item_link white -->
+                            <a href="#" class="menu_link">Пакети</a>
+                            <a href="#" class="menu_link">Партнери</a>
+                            <a href="#" class="menu_link white">Новини</a>
+                            <!-- </ul> -->
 
                             <a href="tel:+380555555555" class="menu_phone">+380 55 555 55 55</a>
 
                             <button class="menu_btn">Захистити себе</button>
                         </div>
+                        <div class="burger active">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
                     </div>
+
+
                 </div>
-                <!-- </nav> -->
-
-                <h1>Надійний захист будівлі</h1>
-
-                <h3>Цілодобовий запис з смарт-камер
-                    <br>
-                    спостереження.
-                </h3>
-
-                <button class="btn_info">Дізнатись більше</button>
             </div>
         </nav>
+
+        <div class="container">
+            <h1>Надійний захист будівлі</h1>
+
+            <h3>Цілодобовий запис з смарт-камер
+                <br>
+                спостереження.
+            </h3>
+
+            <button class="btn_info">Дізнатись більше</button>
+        </div>
+
     </section>
 
     <section class="about">
@@ -96,37 +116,37 @@
             <div class="title">Можливості</div>
 
             <div class="row">
-                <div class="col-xl-4">
+                <div class="col-xl-4 col-md-4 col-12">
                     <div class="capabilities_block">
                         <img src="img/promises_1.svg" alt="promises_1" class="capabilities_image">
                         <div class="capabilities_block_title">Система спостереження</div>
                     </div>
                 </div>
-                <div class="col-xl-4">
+                <div class="col-xl-4 col-md-4 col-12">
                     <div class="capabilities_block">
                         <img src="img/promises_2.svg" alt="promises_2" class="capabilities_image">
                         <div class="capabilities_block_title">Сигналізація</div>
                     </div>
                 </div>
-                <div class="col-xl-4">
+                <div class="col-xl-4 col-md-4 col-12">
                     <div class="capabilities_block">
                         <img src="img/promises_3.svg" alt="promises_3" class="capabilities_image">
                         <div class="capabilities_block_title">Власна служба охорони</div>
                     </div>
                 </div>
-                <div class="col-xl-4">
+                <div class="col-xl-4 col-md-4 col-12">
                     <div class="capabilities_block">
                         <img src="img/promises_4.svg" alt="promises_4" class="capabilities_image">
                         <div class="capabilities_block_title">10 власних вертольотів</div>
                     </div>
                 </div>
-                <div class="col-xl-4">
+                <div class="col-xl-4 col-md-4 col-12">
                     <div class="capabilities_block">
                         <img src="img/promises_5.svg" alt="promises_5" class="capabilities_image">
                         <div class="capabilities_block_title">Собаки, що вміють говорити <br> (та переконувати)</div>
                     </div>
                 </div>
-                <div class="col-xl-4">
+                <div class="col-xl-4 col-md-4 col-12">
                     <div class="capabilities_block">
                         <img src="img/promises_6.svg" alt="promises_6" class="capabilities_image">
                         <div class="capabilities_block_title">Рослини-асасіни</div>
@@ -141,43 +161,48 @@
             <div class="title">Можливості</div>
             <div class="promises_wrapper">
                 <div class="promises_block">
-                    <div class="promises_block_title">Пакет «Безпечна квартира»</div>
-                    <div class="promises_block_entering">Включає:</div>
-                    <ul class="promises_block_list">
-                        <li>Систему відеоспостереження</li>
-                        <li>Сигналізація</li>
-                        <li>Захист служби охорони</li>
-                    </ul>
-                    <div class="promises_block_price">1000 грн / місяць</div>
-                    <button class="promises_block_btn" id="choose_0">Обрати</button>
-                </div>
-
-
-                <div class="promises_block">
-                    <div class="promises_block_title">Пакет «Безпечний будинок»</div>
-                    <div class="promises_block_entering">Включає:</div>
-                    <ul class="promises_block_list">
-                        <li>Систему відеоспостереження для будинку</li>
-                        <li>Сигналізація</li>
-                        <li>Захист служби охорони</li>
-                        <li>Клумбу з рослинами-асасінами</li>
-                    </ul>
-                    <div class="promises_block_price">10000 грн / місяць</div>
-                    <button class="promises_block_btn" id="choose_1">Обрати</button>
+                    <div class="promises_block_wrapper">
+                        <div class="promises_block_wrapper_title">Пакет «Безпечна квартира»</div>
+                        <div class="promises_block_wrapper_entering">Включає:</div>
+                        <ul class="promises_block_wrapper_list">
+                            <li>Систему відеоспостереження</li>
+                            <li>Сигналізація</li>
+                            <li>Захист служби охорони</li>
+                        </ul>
+                        <div class="promises_block_wrapper_price">1000 грн / місяць</div>
+                        <button class="promises_block_wrapper_btn" id="choose_0">Обрати</button>
+                    </div>
                 </div>
 
                 <div class="promises_block">
-                    <div class="promises_block_title">Пакет «Безпечне місто»</div>
-                    <div class="promises_block_entering">Включає:</div>
-                    <ul class="promises_block_list">
-                        <li>Систему тотального спостереження</li>
-                        <li>Систему розпізнавання облич</li>
-                        <li>Систему розпізнавання неправильного паркування</li>
-                        <li>Вбудований захист від тоталітаризму</li>
-                        <li>Вбудований захист від корупції</li>
-                    </ul>
-                    <div class="promises_block_price">Ціна за домовленістю</div>
-                    <button class="promises_block_btn" id="choose_2">Обрати</button>
+                    <div class="promises_block_wrapper">
+                        <div class="promises_block_wrapper_title">Пакет «Безпечний будинок»</div>
+                        <div class="promises_block_wrapper_entering">Включає:</div>
+                        <ul class="promises_block_wrapper_list">
+                            <li>Систему відеоспостереження для будинку</li>
+                            <li>Сигналізація</li>
+                            <li>Захист служби охорони</li>
+                            <li>Клумбу з рослинами-асасінами</li>
+                        </ul>
+                        <div class="promises_block_wrapper_price">10000 грн / місяць</div>
+                        <button class="promises_block_wrapper_btn" id="choose_1">Обрати</button>
+                    </div>
+                </div>
+
+                <div class="promises_block">
+                    <div class="promises_block_wrapper">
+                        <div class="promises_block_wrapper_title">Пакет «Безпечне місто»</div>
+                        <div class="promises_block_wrapper_entering">Включає:</div>
+                        <ul class="promises_block_wrapper_list">
+                            <li>Систему тотального спостереження</li>
+                            <li>Систему розпізнавання облич</li>
+                            <li>Систему розпізнавання неправильного паркування</li>
+                            <li>Вбудований захист від тоталітаризму</li>
+                            <li>Вбудований захист від корупції</li>
+                        </ul>
+                        <div class="promises_block_wrapper_price">Ціна за домовленістю</div>
+                        <button class="promises_block_wrapper_btn" id="choose_2">Обрати</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -210,36 +235,40 @@
             </div>
         </div>
     </footer>
-    
+
     <div class="modal hidden">
         <div class="modal_dialog hidden">
             <div class="modal_content">
                 <form action="">
                     <div data-close class="modal_content_close"></div>
                     <div class="modal_title">
-                        Відчуйте реальну 
+                        Відчуйте реальну
                         <br>
                         безпеку
                     </div>
                     <div class="modal_pocket">
-                        <div class="modal_pocket_title">Обраний пакет: </div> 
-                        <div class="modal_pocket_chosen"><b>Безпечна квартира</b></div>
+                        <div class="modal_header_wrapper">
+                            <div class="modal_pocket_title">Обраний пакет: </div>
+                            <div class="modal_pocket_chosen"><b>Безпечна квартира</b></div>
+                        </div>
                         <div class="modal_pocket_btn">Змінити</div>
                     </div>
                     <div class="modal_name">
                         <div class="modal_name_title">Ваше ім’я</div>
-                        <input required placeholder="Сергій Іванович" name="name" id="name" type="text" class="modal_input input_name">
+                        <input required placeholder="Сергій Іванович" name="name" id="name" type="text"
+                            class="modal_input input_name">
                     </div>
                     <div class="modal_number">
-                         <div class="modal_number_title">Ваш номер телефону</div>
-                    <input required mask="+000 00 000 00 00" placeholder="+380 33 333 33 33" id="phone" name="phone" type="phone" class="modal_input input_number">
+                        <div class="modal_number_title">Ваш номер телефону</div>
+                        <input required mask="+000 00 000 00 00" placeholder="+380 33 333 33 33" id="phone" name="phone"
+                            type="phone" class="modal_input input_number">
                     </div>
-                   
+
                     <div class="modal_rules">
-                        <input required type="checkbox" class="modal_rules_checkbox"> 
+                        <input required type="checkbox" class="modal_rules_checkbox">
                         <div class="modal_rules_title">Погоджуюсь з умовами сервісу</div>
                     </div>
-                    
+
                     <button class="modal_btn" id="main_modal_btn">Зареєструватись</button>
                 </form>
             </div>
@@ -249,7 +278,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
     <script src="https://kit.fontawesome.com/62c58101b8.js" crossorigin="anonymous"></script>
     <script src="js/script.js" crossorigin="anonymous"></script>
-});
+
 </body>
 
 </html>

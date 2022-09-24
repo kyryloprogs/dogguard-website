@@ -1,50 +1,63 @@
 
+:root
+    --index: calc(1vw + 1vh)
+
 .container
-    max-width: 1600px
+    max-width: 1224px
     margin: 0 auto
 
 nav
-    height: 40px
+    height: 50px
     // background: yellow
     width: 100%
     z-index: 5
     position: absolute
-    top: 40px
+    top: 30px
 
+    // .nav_bar
+    //     display: grid
+    //     grid-row: 10px
+    //     grid
     .main_block
         display: flex
         justify-content: flex-start
         align-items: center
         flex-direction: row
-        width: 40px
         .logo
             width: 40px
             display: flex
             align-items: center
-            padding: 0px
+            // padding: 0px
             gap: 12px
+            height: 100%
+            content: url("../icons/logo_black.png") Dogguard
+            
+
             img
                 width: 40px
                 height: 40px
             &_name
                 width: 229px
-                height: 40px
-
+                height: 50px
+                padding-top: 5px
                 font-family: 'Montserrat'
                 font-style: normal
                 font-weight: 900
-                font-size: 36px
+                font-size: 30px
                 line-height: 40px
                 text-transform: uppercase
                 color: #292729
     .language
-        margin: auto 0 auto 275px
+        // margin: auto 0
         display: flex
         flex-direction: row
         align-items: center
-        padding: 0px
+        justify-content: flex-start
+        // padding: 0px
         gap: 12px
         list-style-type: none
+        height: 100%
+        padding-left: 15px
         &_link
             font-family: 'Nunito Sans'
             font-style: normal
@@ -58,32 +71,45 @@ nav
     .menu
         display: flex
         flex-direction: row
-        justify-content: space-around
+        justify-content: space-between
         align-items: center
-        padding: 0
+        height: 100%
 
-        &_list
-            display: flex
-            flex-direction: row
-            align-items: center
-            padding: 0px
-            gap: 40px
-            margin: 0
-            width: 311px
-            height: 26px
-            &_item
+        &_link
+            font-family: 'Nunito Sans'
+            font-style: normal
+            font-weight: 800
+            font-size: 20px
+            line-height: 132%
+            color: #292729
 
-                list-style-type: none
-                .item_link
+        .white
+            color: #ffffff
+        // &_list
+        //     display: flex
+        //     flex-direction: row
+        //     align-items: center
+        //     justify-content: space-between
+        //     padding: 0px
+        //     // gap: 40px
+        //     margin: 0
+        //     width: 311px
 
-                    font-family: 'Nunito Sans'
-                    font-style: normal
-                    font-weight: 800
-                    font-size: 20px
-                    line-height: 132%
-                    color: #292729
-                .white
-                    color: #ffffff
+            // align-content: space-between
+            // width: 40%
+            // &_item
+
+            //     list-style-type: none
+            //     .item_link
+
+            //         font-family: 'Nunito Sans'
+            //         font-style: normal
+            //         font-weight: 800
+            //         font-size: 20px
+            //         line-height: 132%
+            //         color: #292729
+            //     .white
+            //         color: #ffffff
 
         &_phone
 
@@ -126,7 +152,7 @@ h1
     font-size: 48px
     line-height: 124%
     color: #292729
-    margin-top: 180px
+    padding-top: 260px
 h3
     font-family: 'Nunito Sans'
     font-style: normal
@@ -248,6 +274,7 @@ h3
                 display: block
                 width: 200px
                 height: 200px
+                
 
 @keyframes right_arrow
     0%
@@ -314,96 +341,100 @@ h3
         justify-content: space-around
         align-content: center
     &_block
-        width: 392px
+        width: 360px
         height: 448px
-        display: flex
-        flex-direction: column
+        display: block
         background: rgba(227, 223, 224, 0.1)
         box-shadow: 0px 4px 26px rgba(0, 0, 0, 0.25)
         backdrop-filter: blur(8px)
         border-radius: 20px
+        &_wrapper
+            width: 330px
+            height: 400px
+            display: flex
+            flex-direction: column
+            margin: 22px auto
+            &_title
+                // margin-left: 32px
+                font-family: 'Nunito Sans'
+                font-style: normal
+                font-weight: 700
+                font-size: 23px
+                line-height: 124%
+                color: white
+                margin-top: 24px
+            &_entering
+                // position: relative
+                font-family: 'Nunito Sans'
+                font-style: normal
+                font-weight: 600
+                font-size: 14px
+                line-height: 150%
+                color: white
+                margin-top: 10px
+                // margin-left: 32px
+            &_list
+                margin-top: 12px
+                font-family: 'Nunito Sans'
+                font-style: normal
+                font-weight: 400
+                font-size: 16px
+                line-height: 144%
+                color: white
+                list-style-type: none
+                li
+                    position: relative
+                    margin-bottom: 8px
+                    &:before
+                        position: absolute
+                        display: block
+                        content: ''
+                        left: -27px
+                        width: 20px
+                        height: 20px
+                        background: url("../icons/paw_icon.png") center (center / cover) no-repeat
 
-        &_title
-            margin-left: 32px
-            font-family: 'Nunito Sans'
-            font-style: normal
-            font-weight: 700
-            font-size: 24px
-            line-height: 124%
-            color: white
-            margin-top: 24px
-        &_entering
-            position: relative
-            font-family: 'Nunito Sans'
-            font-style: normal
-            font-weight: 600
-            font-size: 14px
-            line-height: 150%
-            color: white
-            margin-top: 10px
-            margin-left: 32px
-        &_list
-            margin: 12px 0 0 32px
-            font-family: 'Nunito Sans'
-            font-style: normal
-            font-weight: 400
-            font-size: 16px
-            line-height: 144%
-            color: white
-            list-style-type: none
-            li
+            &_price
+                display: flex
+                margin: auto auto 16px auto
+                // position: relative
+                // text-align: center
+                font-family: 'Nunito Sans'
+                font-style: normal
+                font-weight: 800
+                font-size: 20px
+                line-height: 132%
+                color: #E3DFE0
+
+            &_btn
+
+                margin: 0 auto
                 position: relative
-                margin-bottom: 8px
-                &:before
-                    position: absolute
-                    display: block
-                    content: ''
-                    left: -27px
-                    width: 20px
-                    height: 20px
-                    background: url("../icons/paw_icon.png") center (center / cover) no-repeat
+                display: flex
+                flex-direction: row
+                justify-content: center
+                align-items: center
+                padding: 5px 16px
+                gap: 10px
 
-        &_price
-            display: flex
-            margin: auto auto 16px auto
-            // position: relative
-            // text-align: center
-            font-family: 'Nunito Sans'
-            font-style: normal
-            font-weight: 800
-            font-size: 20px
-            line-height: 132%
-            color: #E3DFE0
+                width: 107px
+                height: 40px
 
-        &_btn
+                background: #E3DFE0
 
-            margin: 0 auto 24px auto
-            position: relative
-            display: flex
-            flex-direction: row
-            justify-content: center
-            align-items: center
-            padding: 5px 16px
-            gap: 10px
+                border: 1px solid #E3DFE0
+                backdrop-filter: blur(4px)
 
-            width: 107px
-            height: 40px
+                border-radius: 24px
 
-            background: #E3DFE0
+                font-family: 'Nunito Sans'
+                font-style: normal
+                font-weight: 800
+                font-size: 20px
+                line-height: 132%
 
-            border: 1px solid #E3DFE0
-            backdrop-filter: blur(4px)
-
-            border-radius: 24px
-
-            font-family: 'Nunito Sans'
-            font-style: normal
-            font-weight: 800
-            font-size: 20px
-            line-height: 132%
-
-            color: #292729
-            // margin-top: auto
+                color: #292729
+                // margin-top: auto
 
 footer
     min-height: 70px
@@ -492,6 +523,10 @@ footer
         flex-direction: row
         justify-content: center
         align-items: center
+        .modal_header_wrapper
+            display: flex
+            flex-direction: row
+            justify-items: center
         &_title
             +chosen_pocket_text_style
         &_chosen
@@ -723,3 +758,29 @@ footer
     height: 50px
     margin: 0 auto 16px auto
     background: url('../icons/logo_black.png') center (center / cover) no-repeat
+
+.burger
+    display: none
+    width: 50px
+    height: 40px
+    position: absolute
+    right: 0px
+    top: 8px
+    // transform: translateY(50%)
+    span
+        display: block
+        width: 50px
+        height: 5px     
+        background: #E3DFE0
+        border-radius: 4px
+        margin-bottom: 10px
+        transition: 0.5s all
+        opacity: 1
+
+.burger_active
+    span:nth-child(1)
+        transform: translateY(5px) rotate(-45deg)
+    span:nth-child(2)
+        transform: translateY(-10px) rotate(45deg)
+    span:nth-child(3)
+        opacity: 0
