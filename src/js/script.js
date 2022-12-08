@@ -11,30 +11,8 @@ const hamburger = document.querySelector('.burger'),
 hamburger.addEventListener('click', (e) => {
     hamburger.classList.toggle('burger_active');
     activeMenu.classList.toggle('menu_active');
-
-    // if (e.target == modalWrapper || e.target.getAttribute('data-close') == '') {
-    //     thanksModal.remove();
-    // }
-    // Second method
-    // if (hamburger.classList.contains('burger_active')) {
-    //     hamburger.classList.remove('burger_active');
-    // } else {
-    //     hamburger.classList.add('burger_active');
-    // }
 });
 
-
-// activeBurger.addEventListener('click', () => {
-//     hamburger.classList.toggle('burger_active');
-
-    // Second method
-    // if (hamburger.classList.contains('burger_active')) {
-    //     hamburger.classList.remove('burger_active');
-    // } else {
-    //     hamburger.classList.add('burger_active');
-    // }
-// });
-// Modal main
 
 const btns = document.querySelectorAll(".promises_block_wrapper_btn"),
     modalWindow = document.querySelector(".modal_dialog"),
@@ -58,8 +36,7 @@ pocketBtn.addEventListener('click', (e) => {
     e.preventDefault();
 
     hideModal(modalWindow);
-    // modalWindow.classList.add('hidden');
-    // modalWindow.classList.remove('show');
+
     const thanksModal = document.createElement('div');
     thanksModal.classList.add('modal_dialog');
     thanksModal.innerHTML = `
@@ -99,7 +76,6 @@ pocketBtn.addEventListener('click', (e) => {
             thanksModal.remove();
             showModal();
         });
-        // thanksModal.remove();
     });
 
     modalWrapper.addEventListener('click', (e) => {
@@ -108,25 +84,15 @@ pocketBtn.addEventListener('click', (e) => {
         }
     });
 
-    // thanksModal.remove();
 });
 
-// firstModalPageBtn.addEventListener('click', (e) => {
-//     // e.preventDefault();
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     // debugger;
     localStorage.setItem("phone", userPhone.value);
     localStorage.setItem("name", userName.value);
-
-
-    // modalWindow.classList.add('hidden');
-    // modalWindow.classList.remove('show');
     hideModal(modalWindow);
-    // modalWrapper.classList.remove('hidden');
-
-    // modalWrapper.childNodes.add
 
     const checkModal = document.createElement('div');
     checkModal.classList.add('modal_dialog');
@@ -160,21 +126,18 @@ form.addEventListener('submit', (e) => {
         <button class="modal_btn" id="confirm_modal_btn">Все вірно</button>
     </div>
 `;
-    // thanksModal.querySelectorAll('button')
+
     modalWrapper.append(checkModal);
     const tempButtonAgree = checkModal.querySelector('#confirm_modal_btn'),
         tempButtonBack = checkModal.querySelector('#back_modal_btn');
 
     tempButtonAgree.addEventListener('click', (el) => {
         checkModal.remove();
-        // showModal();
         showFinalModal();
     });
 
     tempButtonBack.addEventListener('click', () => {
         checkModal.remove();
-        // modalWrapper.classList.add('show');
-        // modalWindow.classList.add('show');
         showModal();
     });
 
@@ -218,11 +181,8 @@ function showModal() { // modalSelector
 }
 
 function hideModal(modalSelector) { // 
-    // const modal = document.querySelector(selector);
     modalSelector.classList.add('hidden');
-    // modalWindow.classList.add("hidden");
     modalSelector.classList.remove("show");
-    // modalWindow.classList.remove("show");
 }
 
 
@@ -241,7 +201,6 @@ function showFinalModal() {
             <button class="modal_btn" id="accept_update">Закрити вікно</button>
         </div>
 `;
-    // thanksModal.querySelectorAll('button')
     modalWrapper.append(thanksModal);
 
     const tempButtonAgree = modalWrapper.querySelector('#accept_update');
